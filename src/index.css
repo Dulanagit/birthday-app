@@ -1,0 +1,31 @@
+* {
+	box-sizing: border-box;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+	width: 100%;
+	min-height: 100%;
+}
+
+body {
+	margin: 0;
+	font-family: 'Trebuchet MS', 'Comic Sans MS', 'Arial Rounded MT Bold', system-ui, sans-serif;
+	background: #ff7fb9;
+}
+
+button,
+input,
+textarea,
+select {
+	font: inherit;
+}
+
+button {
+	color: inherit;
+}
