@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import './App.css'
 
-const BIRTHDAY_TARGET = new Date('2026-07-19T02:07:00')
+const BIRTHDAY_TARGET = new Date('2026-07-21T00:00:00')
 const LOVE_QUOTES = [
   'Happy Birthday, Savii. You make ordinary days feel like magic.',
   'Every smile of yours is my favorite celebration.',
