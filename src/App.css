@@ -710,6 +710,9 @@
 }
 
 .final-scene {
+	min-width: 0;
+    overflow-x: hidden;
+
 	width: min(100%, 760px);
 	min-height: 100vh;
 	padding: 24px 16px 30px;
@@ -754,6 +757,7 @@
 
 .quote-card {
 	width: 100%;
+	/* flex: 0 0 100%; */
 	flex-shrink: 0;
 	padding: 28px 20px;
 	min-height: 170px;
@@ -790,6 +794,40 @@
 	transform: scale(1.25);
 }
 
+.final-home{
+	display: flex;
+	margin-top: 10%;
+}
+
+/* Strip away the browser's default button box */
+.reset-scene-btn {
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+    padding: 12px;
+    cursor: pointer;
+    
+    /* Set the default color of the icon */
+    color: #5b1c56; 
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+/* Control the physical size of the SVG */
+.reset-scene-btn svg {
+    width: 32px;
+    height: 32px;
+}
+
+/* Optional: Make it pop when she hovers over it */
+.reset-scene-btn:hover {
+    transform: scale(1.1); 
+    color: #c2387e; 
+}
 .inside-card {
 	position: relative;
 	width: min(760px, calc(100vw - 32px));

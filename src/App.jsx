@@ -95,6 +95,25 @@ function App() {
 
   const birthdayReached = countdown.isBirthdayReached
 
+  const resetApp = () => {
+    // Clear any pending timeouts so they don't fire after the reset
+    if (toastTimeoutRef.current) {
+      clearTimeout(toastTimeoutRef.current);
+    }
+    
+    // Reset all state variables to their exact initial values
+    setScene('countdown');
+    setInsideStage('intro');
+    setQuoteIndex(0);
+    setToast('');
+    setIsDoorShaking(false);
+    setIsDragging(false);
+    setDoorOpen(false);
+    setKeyPosition({ x: 18, y: 72 });
+    
+    // Note: We don't need to reset currentTime since it naturally ticks forward
+  };
+
   const showToast = (message) => {
     window.clearTimeout(toastTimeoutRef.current)
     setToast(message)
@@ -281,7 +300,7 @@ function App() {
         <div className="inside-scene">
           {insideStage === 'intro' && (
             <>
-              <h1 className="inside-title">Welcome</h1>
+              <h1 className="inside-title">Surprisee!!</h1>
               <p className="inside-copy inside-copy-compact">please open the box.</p>
 
               <button
@@ -370,6 +389,21 @@ function App() {
             {LOVE_QUOTES.map((_, index) => (
               <span key={index} className={`quote-dot ${quoteIndex === index ? 'is-active' : ''}`} />
             ))}
+          </div>
+          <div className="final-home">
+            <button 
+              className="reset-scene-btn" 
+              onClick={resetApp} 
+              aria-label="Refresh the page"
+            >
+              <svg 
+                xmlns="http://www.w3.org/2000/svg" 
+                viewBox="0 0 24 24" 
+                fill="currentColor"
+              >
+                <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
+              </svg>
+            </button>
           </div>
         </main>
       </div>
